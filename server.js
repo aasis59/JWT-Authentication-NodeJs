@@ -30,7 +30,7 @@ app.get("/posts", authenticationToken,(req, res) => {
 app.post("/login", (req, res) => {
   const username = req.body.username;
   const user = { name: username };
-   const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECERT);
+   const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET);
    res.json({ token:accessToken})
 });
 
